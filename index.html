@@ -941,14 +941,14 @@ function buildWALinks(nom,day,secM,secS,eM,eS,maj,isTest,presM,presS){
   if(isTest)msgM+='🧪 *MESSAGE TEST*\n\n';
   msgM+=`✅ *PRÉSENCE MATIN*\n\n👩 *${nom}*\n📅 *${fmtDate(filleDate)}*\n⏰ *${heure}*\n\n`;
   msgM+=`☀️ Secteur *${secM||(isTest?'AB':'')}* — ${SEC_INFO[secM||(isTest?'AB':'')]?.label||''}\n`;
-  msgM+=`⏱ 6h × ${taux}€/h = *${eM.toFixed(2)} €*${maj?' (WE)':''}`;
+  msgM+=`⏱ 6h — matin/h = /h = *${eM.toFixed(2)} €*${maj?' (WE)':''}`;
   if(isTest)msgM+='\n\n🧪 _Ceci est un test_';
   document.getElementById('waBtnMatin').href=`https://wa.me/?text=${encodeURIComponent(msgM)}`;
   let msgS='';
   if(isTest)msgS+='🧪 *MESSAGE TEST*\n\n';
   msgS+=`✅ *PRÉSENCE SOIR*\n\n👩 *${nom}*\n📅 *${fmtDate(filleDate)}*\n⏰ *${heure}*\n\n`;
   msgS+=`🌙 Secteur *${secS||(isTest?'GC':'')}* — ${SEC_INFO[secS||(isTest?'GC':'')]?.label||''}\n`;
-  msgS+=`⏱ 4h × ${taux}€/h = *${eS.toFixed(2)} €*${maj?' (WE)':''}`;
+  msgS+=`⏱ 4h — soir/h = *${eS.toFixed(2)} €*${maj?' (WE)':''}`;
   if(isTest)msgS+='\n\n🧪 _Ceci est un test_';
   document.getElementById('waBtnSoir').href=`https://wa.me/?text=${encodeURIComponent(msgS)}`;
 }
