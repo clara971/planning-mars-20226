@@ -730,7 +730,7 @@ function buildWALinks(nom,day,secM,secS,eM,eS,maj){
   const tarifTag=maj?' ⭐ Dim/Férié':'';
   let msgM=`✅ *PRÉSENCE MATIN*\n\n👩 *${nom}*\n📅 *${fmtDate(filleDate)}*${tarifTag}\n⏰ *${heure}*\n\n☀️ Secteur *${secM}* — ${SEC_INFO[secM]?.label||''}\n⏱ 6h 
   document.getElementById('waBtnMatin').href=`https://wa.me/?text=${encodeURIComponent(msgM)}`;
-  if(secS){let msgS=`✅ *PRÉSENCE SOIR*\n\n👩 *${nom}*\n📅 *${fmtDate(filleDate)}*${tarifTag}\n⏰ *${heure}*\n\n🌙 Secteur *${secS}* — ${SEC_INFO[secS]?.label||''}\n⏱ 4h 
+  if(secS){let msgS=`✅ *PRÉSENCE SOIR*\n\n👩 *${nom}*\n📅 *${fmtDate(filleDate)}*${tarifTag}\n⏰ *${heure}*\n\n🌙 Secteur *${secS}* — ${SEC_INFO[secS]?.label||''}\n⏱ 4h`;document.getElementById('waBtnSoir').href=`https://wa.me/?text=${encodeURIComponent(msgS)}`;} 
 }
 function updWAButtons(now){
   const nom=document.getElementById('fNomSel').value;if(!nom)return;
