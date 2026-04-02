@@ -728,9 +728,9 @@ function onFilleNom(){
 function buildWALinks(nom,day,secM,secS,eM,eS,maj){
   const heure=fmtHeure(new Date());
   const tarifTag=maj?' ⭐ Dim/Férié':'';
-  let msgM=`✅ *PRÉSENCE MATIN*\n\n👩 *${nom}*\n📅 *${fmtDate(filleDate)}*${tarifTag}\n⏰ *${heure}*\n\n☀️ Secteur *${secM}* — ${SEC_INFO[secM]?.label||''}\n⏱ 6h · ${calcE(H_M,day).toFixed(2)} €`;
+  let msgM=`✅ *PRÉSENCE MATIN*\n\n👩 *${nom}*\n📅 *${fmtDate(filleDate)}*${tarifTag}\n⏰ *${heure}*\n\n☀️ Secteur *${secM}* — ${SEC_INFO[secM]?.label||''}\n⏱ 6h 
   document.getElementById('waBtnMatin').href=`https://wa.me/?text=${encodeURIComponent(msgM)}`;
-  if(secS){let msgS=`✅ *PRÉSENCE SOIR*\n\n👩 *${nom}*\n📅 *${fmtDate(filleDate)}*${tarifTag}\n⏰ *${heure}*\n\n🌙 Secteur *${secS}* — ${SEC_INFO[secS]?.label||''}\n⏱ 4h · ${calcE(H_S,day).toFixed(2)} €`;document.getElementById('waBtnSoir').href=`https://wa.me/?text=${encodeURIComponent(msgS)}`;}
+  if(secS){let msgS=`✅ *PRÉSENCE SOIR*\n\n👩 *${nom}*\n📅 *${fmtDate(filleDate)}*${tarifTag}\n⏰ *${heure}*\n\n🌙 Secteur *${secS}* — ${SEC_INFO[secS]?.label||''}\n⏱ 4h 
 }
 function updWAButtons(now){
   const nom=document.getElementById('fNomSel').value;if(!nom)return;
